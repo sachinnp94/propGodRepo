@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="" rel="shortcut icon">
+<script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/javascripts/school.js"></script>
+    
+<!--
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+-->
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">PropGod</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/college">School</a></li>
+          <li><a href="/college">College</a></li>
+          <li><a href="/college">Tourists</a></li>
+        </ul>
+      </div>
+    </nav>
+
+<div ng-app="schoolModule" ng-controller="schoolController">
+<div class="container">
+  <br>
+    
+<div class="row">
+
+  <div class="row">
+        <div class="input-group">
+            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="Search..">
+            <span class="input-group-btn">
+                <button class="btn btn-success form-controls input-lg" ng-click="searchButton()">Search</button>
+            </span>
+        </div>
+    </div>
+
+</div>
+<!--
+        <div ng-repeat='names in name | filter: searchBox'>
+        <h1 ng-bind="names.name"></h1>
+    </div>    
+-->
+    <br>
+
+    <div ng-show="searchButtonShow">
+        <div class="large-10 columns" ng-show="searchButton">
+        <table>
+            <caption><h3>list of desired schools</h3></caption>
+            <thead>
+                <tr>
+                    <th width="200px">Name</th>
+                    <th width="200px">address</th>
+                    <th width="25%">phone no</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='names in name | filter: searchBox'>
+                    <td><h5 ng-bind="names.name"></h5></td>
+                    <td>
+                        <h5 ng-bind="names.address.state"></h5>
+                        <h5 ng-bind="names.address.city"></h5>
+                        <h5 ng-bind="names.address.street"></h5>
+                        <h5 ng-bind="names.address.zipcode"></h5>
+                    </td>
+                    <td><h5 ng-bind="names.phonenumber"></h5></td>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+    </div>
+
+
+</div>
+</body> 
+</html>    
+
+

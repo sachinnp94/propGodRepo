@@ -1,0 +1,4 @@
+{
+	"server-address": "http://localhost",
+	"mongodb-url": "mongodb://localhost:27017/db2"
+}

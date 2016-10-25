@@ -1,0 +1,44 @@
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="/stylesheets/style.css">    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/javascripts/home.js"></script>
+</head>
+
+                
+               
+
+<body>
+    
+<div ng-app="propModule" ng-controller="propController">
+    
+    <div class="container"> 
+<!--        <div class="background-image">-->
+        <div class="row">
+            <div>
+                <form class="form-inline">
+                        <input class="searchbar form-control" type="text" ng-model="searchBox" name="search" placeholder="Search..">
+<!--
+                        <input class="searchbar form-control" type="text" ng-model="searchBox" name="search" placeholder="Search..">
+                        <input class="searchbar form-control" type="text" ng-model="searchBox" name="search" placeholder="Search..">
+-->
+                        <button class="btn btn-default">submit</button>
+                </form>
+
+            </div>
+            </div>
+        <div ng-repeat='names in name | filter: searchBox'>
+        <h1 ng-bind="names.name"></h1>
+    </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
