@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link href="" rel="shortcut icon">
 <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="/javascripts/school.js"></script>
+    <script src="/javascripts/services.js"></script>
     
 <!--
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
 
 </head>
 <body>
-<div ng-app="schoolModule" ng-controller="schoolController">
+<div ng-app="servicesModule" ng-controller="servicesController">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -24,8 +24,8 @@
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="/school">School</a></li>
-          <li><a href="/college">College</a></li>
+          <li><a href="/school">school</a></li>
+          <li><a href="/college">college</a></li>
           <li><a href="/college">Tourists</a></li>
           <li role="presentation" class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 
@@ -40,64 +40,45 @@
 
 <div class="container">
   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
     
-<div class="row">
 
-  <div class="row">
-        <div class="input-group">
-            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="School name...">
-            <span class="input-group-btn">
-                <!-- <button class="btn btn-success form-controls input-lg" ng-click="searchButton()">Search</button> -->
-            </span>
-        </div>
-    </div>
-    <br>
     <div class="row">
         <div class="input-group">
-            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="School name...">
-            <span class="input-group-btn">
-                <!-- <button class="btn btn-success form-controls input-lg" ng-click="searchButton()">Search</button> -->
-            </span>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="input-group">
-            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox1" placeholder="Phone number...">
+            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="Phone number...">
             <span class="input-group-btn">
                 <button class="btn btn-success form-controls input-lg" ng-click="searchButton()">Search</button>
             </span>
         </div>
     </div>
 
-</div>
+
 <!--
         <div ng-repeat='names in name | filter: searchBox'>
         <h1 ng-bind="names.name"></h1>
     </div>    
 -->
-    <br>
+    <br> <br> <br> <br>
 
     <div ng-show="searchButtonShow">
         <div class="large-10 columns" ng-show="searchButton">
         <table>
-            <caption><h3>list of desired schools</h3></caption>
+            <caption><h3>list of desired servicess</h3></caption>
             <thead>
                 <tr>
                     <th width="200px">Name</th>
-                    <th width="200px">address</th>
+                    <th width="200px">service</th>
                     <th width="25%">phone no</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat='names in name | filter: {name:searchBox, phonenumber:searchBox1}'>
+                <tr ng-repeat='names in name'>
                     <td><h5 ng-bind="names.name"></h5></td>
-                    <td>
-                        <h5 id="id1" ng-bind="names.address.state"></h5>
-                        <h5 id="id2" ng-bind="names.address.city"></h5>
-                        <h5 id="id3" ng-bind="names.address.street"></h5>
-                        <h5 id="id4" ng-bind="names.address.zipcode"></h5>
-                    </td>
+                    <td><h5 ng-bind="names.servicetype"></td>
                     <td><h5 ng-bind="names.phonenumber"></h5></td>
                 </tr>
             </tbody>

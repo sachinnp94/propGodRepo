@@ -18,9 +18,16 @@
   filter: blur(1px);
 }
 */
+.carousel-caption{
+  color:#0e72f4;
+  margin: auto;
+  text-shadow: 2px 2px #2447e2;
+  font-size: 1.5em;
+}
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width:113%;
+      height: 65%;
       margin: auto;
   }
 
@@ -33,8 +40,8 @@
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px;
+  font: 14px 'Tangerine', serif;
 }
 
 ul{
@@ -239,3 +246,8 @@ tbody:hover tr:hover td {
 	 opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
 }
+
+.hdr{
+  font-family: "Lobster", Sans-serif;
+}
+

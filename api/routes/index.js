@@ -7,6 +7,7 @@ const School = require('../services/school')
 const Places = require('../services/places')
 const Services = require('../services/services')
 const Company = require('../services/company')
+const Internship = require('../services/internship')
 var router = express.Router()
 
 router.post('/create-college-details', co.wrap(function *  (req, res){
@@ -63,5 +64,17 @@ router.post('/find-company', co.wrap(function* (req, res, next){
 	let result = yield Company.findCompany(req.body)
 	res.send(result)
 }))
+
+router.post('/create-internship-details', co.wrap(function * (req, res){
+	console.log('body',req.body)
+	let result = yield Internship.createInternship(req.body)
+	res.send(result)
+}))
+
+router.post('/find-internship', co.wrap(function* (req, res, next){
+	let result = yield Internship.findInternship(req.body)
+	res.send(result)
+}))
+
 
 module.exports = router

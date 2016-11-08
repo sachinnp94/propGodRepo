@@ -8,9 +8,10 @@ class ServiceSearch {
 		return yield Services.create(details)
 	}
 	*findService (details){
-		return yield Services.find(details)
+		const search = details.search
+		return yield Services.find({ $or: [{name: new RegExp(search?'.*'+search+'.*':'.*','i')},{servicetype: new RegExp(search?'.*'+search+'.*':'.*','i')},{state: new RegExp(search?'.*'+search+'.*':'.*','i')},{city: new RegExp(search?'.*'+search+'.*':'.*','i')},{phonenumber: new RegExp(search?'.*'+search+'.*':'.*','i')}]})
 	} 
 }
 
-module.exports = new ServiceSearch()
+module.exports = new ServiceSearch()	
 

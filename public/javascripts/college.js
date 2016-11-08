@@ -1,5 +1,5 @@
-var myApp = angular.module("schoolModule",[])
-myApp.controller("schoolController",['$scope', '$http', function($scope, $http){
+var myApp = angular.module("collegeModule",[])
+myApp.controller("collegeController",['$scope', '$http', function($scope, $http){
    
 
     $scope.searchButtonShow = false;
@@ -10,7 +10,7 @@ myApp.controller("schoolController",['$scope', '$http', function($scope, $http){
 
         $scope.name = []
         var postdata = {}
-        $http.post('/api/find-schools', postdata)
+        $http.post('/api/find-colleges', postdata)
         .then(result => {
             $scope.name = result.data
              console.log(result.data)
