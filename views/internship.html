@@ -8,11 +8,6 @@
     <link href="" rel="shortcut icon">
 <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/javascripts/internship.js"></script>
-    
-<!--
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
--->
 
 </head>
 <body>
@@ -20,50 +15,25 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">PropGod</a>
+          <a class="navbar-brand" href="/">PropGod</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="/school">school</a></li>
           <li><a href="/college">college</a></li>
-          <li><a href="/college">Tourists</a></li>
-          <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 
-                    <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" ng-repeat='names in name'>
-                </ul>
-           </li>
+          <li><a href="/school">school</a></li>
+          <li><a href="/places">Tourism</a></li>
+          <li class="active"><a href="/internship">internship</a></li>
+          <li><a href="/company">job</a></li>
+          <li><a href="/services">services</a></li>
         </ul>
       </div>
     </nav>
-
 <div class="container">
-  <br>
+  <br><br><br><br>
     
-<div class="row">
 
-  <div class="row">
+<div class="row">
         <div class="input-group">
-            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="internship name...">
-            <span class="input-group-btn">
-                <!-- <button class="btn btn-success form-controls input-lg" ng-click="searchButton()">Search</button> -->
-            </span>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="input-group">
-            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="internship name...">
-            <span class="input-group-btn">
-                <!-- <button class="btn btn-success form-controls input-lg" ng-click="searchButton()">Search</button> -->
-            </span>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="input-group">
-            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox1" placeholder="Phone number...">
+            <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="Enter company,city,state...">
             <span class="input-group-btn">
                 <button class="btn btn-success form-controls input-lg" ng-click="searchButton()">Search</button>
             </span>
@@ -71,12 +41,7 @@
     </div>
 
 </div>
-<!--
-        <div ng-repeat='names in name | filter: searchBox'>
-        <h1 ng-bind="names.name"></h1>
-    </div>    
--->
-    <br>
+  <br>
 
     <div ng-show="searchButtonShow">
         <div class="large-10 columns" ng-show="searchButton">
@@ -93,7 +58,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat='names in name | filter: {name:searchBox, phonenumber:searchBox1}'>
+                <tr ng-repeat='names in name'>
                     <td><h5 ng-bind="names.name"></h5></td>
                     <td><h5 ng-bind="names.qualification"></h5></td>
                     <td><h5 ng-bind="names.duration"></h5></td>

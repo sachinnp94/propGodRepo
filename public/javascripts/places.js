@@ -2,15 +2,15 @@ var myApp = angular.module("placesModule",[])
 myApp.controller("placesController",['$scope', '$http', function($scope, $http){
    
 
-    $scope.searchButtonShow = false;
+    $scope.searchButtonShow = true;
 
     $scope.searchButton = function() {
 
-        $scope.searchButtonShow = !$scope.searchButtonShow;
+        // $scope.searchButtonShow = !$scope.searchButtonShow;
 
         $scope.name = []
-        var postdata = {}
-        $http.post('/api/find-places', postdata)
+        var postdata = {search: $scope.searchBox}
+        $http.post('/api/find-place', postdata)
         .then(result => {
             $scope.name = result.data
              console.log(result.data)

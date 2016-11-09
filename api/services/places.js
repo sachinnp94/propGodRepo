@@ -8,7 +8,13 @@ class PlaceSearch {
 		return yield Places.create(details)
 	}
 	*findPlace (details) {
-		return yield Places.find(details)
+		if(details.search){
+		const search = details.search
+		return yield Places.find({ $or: [{name: new RegExp(search?'.*'+search+'.*':'.*','i')},{state: new RegExp(search?'.*'+search+'.*':'.*','i')},{city: new RegExp(search?'.*'+search+'.*':'.*','i')},{district: new RegExp(search?'.*'+search+'.*':'.*','i')}]})
+
+		} else {
+			return {message: "enter some keywords"}
+		}
 	}
 	
 }

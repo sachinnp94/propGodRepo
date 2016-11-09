@@ -5,19 +5,12 @@ mongoose.Promise = global.Promise
 
 var college = mongoose.Schema({
 	name: String,
-	courses: [{
-		department: String,
-		course: String,
-		duration: String
-	}],
-	address: {
-		country: String,
-		state: String,
-		city: String, 
-		street: String,
-		zipcode: Number
-	},
-	university: String,
+	course1: String,
+	course2: String,
+	course3: String,
+	country: String,
+	state: String,
+	city: String, 
 	phonenumber: String
 })
 
@@ -28,7 +21,6 @@ var school = mongoose.Schema({
 	name:String,
 	state: String,
 	city: String,
-	street: String,
 	zipcode: Number,
 	phonenumber: String
 })
@@ -36,8 +28,10 @@ var school = mongoose.Schema({
 mongoose.model('School', school)
 
 var places = mongoose.Schema({
+	name: String,
 	state: String,
-	city: String	
+	district: String,
+	city: String
 })
 
 mongoose.model('Places', places)

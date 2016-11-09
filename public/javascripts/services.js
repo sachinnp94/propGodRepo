@@ -2,11 +2,11 @@ var myApp = angular.module("servicesModule",[])
 myApp.controller("servicesController",['$scope', '$http', function($scope, $http){
    
 
-    $scope.searchButtonShow = false;
+    $scope.searchButtonShow = true;
 
     $scope.searchButton = function() {
 
-        $scope.searchButtonShow = !$scope.searchButtonShow;
+        // $scope.searchButtonShow = !$scope.searchButtonShow;
 
         $scope.name = []
         var postdata = {search: $scope.searchBox}

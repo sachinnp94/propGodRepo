@@ -8,7 +8,13 @@ class SchoolSearch {
 		return yield School.create(details)
 	}
 	*findSchools (details){
-		return yield School.find(details)
+		if(details.search){
+		const search = details.search
+		return yield School.find({ $or: [{name: new RegExp(search?'.*'+search+'.*':'.*','i')},{state: new RegExp(search?'.*'+search+'.*':'.*','i')},{city: new RegExp(search?'.*'+search+'.*':'.*','i')},{phonenumber: new RegExp(search?'.*'+search+'.*':'.*','i')}]})
+
+		} else {
+			return {message: "enter some keywords"}
+		}
 	} 
 }
 

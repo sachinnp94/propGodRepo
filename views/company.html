@@ -9,34 +9,31 @@
 <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/javascripts/company.js"></script>
     
-<!--
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
--->
-
 </head>
 <body>
 <div ng-app="companyModule" ng-controller="companyController">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">PropGod</a>
+          <a class="navbar-brand" href="/">PropGod</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/school">school</a></li>
           <li><a href="/college">college</a></li>
-          <li><a href="/college">Tourists</a></li>
-          <li role="presentation" class="dropdown">
+          <li><a href="/school">school</a></li>
+          <li><a href="/places">Tourism</a></li>
+          <li><a href="/internship">internship</a></li>
+          <li class="active"><a href="/company">job</a></li>
+          <li><a href="/services">services</a></li>
         </ul>
       </div>
     </nav>
 
 <div class="container">
-  <br><br><br> <br> <br> <br>
+  <br><br><br> <br> 
     
 <div class="row">
     <div class="input-group">
-        <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="Phone number...">
+        <input type="text" name="" class="searchbar form-control form-controls input-lg" ng-model="searchBox" placeholder="enter company name, city, state...">
         <span class="input-group-btn">
             <button class="btn btn-success form-controls input-lg" ng-click="searchButton()">Search</button>
         </span>
@@ -44,17 +41,12 @@
 </div>
 
 </div>
-<!--
-        <div ng-repeat='names in name | filter: searchBox'>
-        <h1 ng-bind="names.name"></h1>
-    </div>    
--->
-    
+<br>   
 
     <div ng-show="searchButtonShow">
         <div class="large-10 columns" ng-show="searchButton">
         <table>
-            <caption><h3>list of desired companys</h3></caption>
+            <caption><h3>list of desired companies</h3></caption>
             <thead>
                 <tr>
                     <th width="200px">name</th>
